@@ -4,30 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather app</title>
-  </head>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;400;500;600;700&family=Laila:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Playfair+Display&display=swap" rel="stylesheet">
   <body>
-    <header>
-      <form action="">
-        <input type="search" placeholder="Enter a city..." />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
-    <main>
-      <div>
-        <h1>Warsaw</h1>
-        <p>
-          Tuesday 14:49, scattered clouds <br />
-          Humidity: 66%, Wind: 3.13km/h
-        </p>
-      </div>
-      <div>☀️12°C</div>
-    </main>
-    <footer>
-      Coded by <a href="https://github.com/lemur-wagner">Anna Wagner</a>, it is
-      hosted on
-      <a href="https://lemurs-weather-app.netlify.app/">Netlify</a> and can be
-      found on
-      <a href="https://github.com/lemur-wagner/my-own-weather-app">GitHub. </a>
-    </footer>
+    <div class="container">
+      <header>
+        <form class="search-form">
+          <input type="search" placeholder="Enter a city..." 
+          class="search-input"/>
+          <input type="submit" value="Search" 
+          class="search-button"/>
+        </form>
+      </header>
+      <main>
+        <div class="weather-app-data">
+          <div class="forecast">
+        Forecast for the <br>
+        rest of the week
+          </div>
+          <div class="weather-today">
+            <h1 class="weather-app-city">Warsaw</h1>
+          <p class="weather-app-details">
+            Tuesday 14:49, scattered clouds <br />
+            Humidity: <strong>66%</strong>, Wind: <strong>3.13km/h</strong> 
+          </p>
+          </div><span class="weather-app-temperature-container">
+          <span class="weather-app-temperature">
+          <span class="weather-app-temperature-icon"> ☀️</span>
+          <span class="weather-app-temperature-value">12</span>
+          <span class="weather-app-temperature-unit">°C</span></span>
+          </span>
+        </div>
+      </main>
+      <footer>
+        Coded by <a href="https://github.com/lemur-wagner">Anna Wagner</a>, it
+        is hosted on
+        <a href="https://lemurs-weather-app.netlify.app/">Netlify</a> and can be
+        found on
+        <a href="https://github.com/lemur-wagner/my-own-weather-app"
+          >GitHub.
+        </a>
+     </footer>
+    </div>
   </body>
 </html>

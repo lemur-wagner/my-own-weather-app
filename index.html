@@ -11,11 +11,14 @@
   <body>
     <div class="container">
       <header>
-        <form class="search-form">
-          <input type="search" placeholder="Enter a city..." 
-          class="search-input"/>
-          <input type="submit" value="Search" 
-          class="search-button"/>
+        <form class="search-form" id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            class="search-form-input"
+            id="search-form-input"
+          />
+          <input type="submit" value="Search" class="search-button" />
         </form>
       </header>
       <main>
@@ -25,17 +28,17 @@
         rest of the week
           </div>
           <div class="weather-today">
-            <h1 class="weather-app-city">Warsaw</h1>
-          <p class="weather-app-details">
-            Tuesday 14:49, scattered clouds <br />
-            Humidity: <strong>66%</strong>, Wind: <strong>3.13km/h</strong> 
-          </p>
-          </div><span class="weather-app-temperature-container">
-          <span class="weather-app-temperature">
-          <span class="weather-app-temperature-icon"> ☀️</span>
-          <span class="weather-app-temperature-value">12</span>
-          <span class="weather-app-temperature-unit">°C</span></span>
-          </span>
+            <h1 class="weather-app-city" id="city">Warsaw</h1>
+            <p class="weather-app-details">
+              Tuesday 14:49, scattered clouds <br />
+              Humidity: <strong>66%</strong>, Wind: <strong>3.13km/h</strong>
+            </p>
+          </div>
+          <div class="weather-app-temperature">
+            <div class="weather-app-temperature-icon">☀️</div>
+            <div class="weather-app-temperature-value">12</div>
+            <div class="weather-app-temperature-unit">°C</div>
+          </div>
         </div>
       </main>
       <footer>
@@ -48,5 +51,6 @@
         </a>
      </footer>
     </div>
+    <script src="src/script.js"></script>
   </body>
 </html>

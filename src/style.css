@@ -60,8 +60,9 @@ a {
   color: #e6720c;
 }
 .weather-app-temperature-icon {
-  font-size: 30px;
-  margin-top: 10px;
+  height: 88px;
+  width: 80px;
+  margin-top: -15px;
 }
 
 .weather-app-temperature-value {

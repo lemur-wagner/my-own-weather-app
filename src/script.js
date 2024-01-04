@@ -32,10 +32,14 @@ function updateWeather(response) {
     "Friday",
     "Saturday",
   ];
-  if (minutes > 10) {
-    minutes = `0${minutes};`;
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
   }
 
+  let icon = document.querySelector("#icon");
+  let iconImage = `  <img src="${response.data.condition.icon_url}"class="weather-app-temperature-icon"/>`;
+
+  icon.innerHTML = iconImage;
   time.innerHTML = `${
     days[date.getDay()]
   } ${date.getHours()}:${date.getMinutes()}`;

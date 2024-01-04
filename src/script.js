@@ -16,9 +16,32 @@ function searchCity(city) {
 
 function updateWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = response.data.temperature.current;
   let city = document.querySelector("#city");
+  let description = document.querySelector("#description");
+  let humidity = document.querySelector("#humidity");
+  let windSpeed = document.querySelector("#wind");
+  let date = new Date(response.data.time * 1000);
+  let time = document.querySelector("#time");
+  let minutes = date.getMinutes();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  if (minutes > 10) {
+    minutes = `0${minutes};`;
+  }
 
+  time.innerHTML = `${
+    days[date.getDay()]
+  } ${date.getHours()}:${date.getMinutes()}`;
+  humidity.innerHTML = response.data.temperature.humidity;
+  windSpeed.innerHTML = response.data.wind.speed;
+  description.innerHTML = response.data.condition.description;
   city.innerHTML = response.data.city;
-  temperatureElement.innerHTML = Math.round(temperature);
+  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
 }

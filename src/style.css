@@ -37,6 +37,7 @@ a {
 .weather-app-data {
   display: flex;
   justify-content: space-between;
+  opacity: 0.8;
 }
 .search-form-input {
   background-color: rgb(249, 246, 238);
@@ -60,18 +61,34 @@ a {
   color: #e6720c;
 }
 .weather-app-temperature-icon {
-  height: 88px;
-  width: 80px;
-  margin-top: -15px;
+  height: 75px;
+  width: 75px;
+  margin-top: -5px;
+  margin-right: -15px;
 }
 
 .weather-app-temperature-value {
-  font-size: 45px;
+  font-size: 50px;
 }
 .weather-app-temperature-unit {
-  font-size: 20px;
+  font-size: 25px;
   margin-top: 7px;
 }
 .weather-app-temperature {
   display: flex;
+}
+.forecast {
+  margin: 15px 0;
+  display: flex;
+  text-align: center;
+}
+.forecast-weekdays {
+  font-size: 16px;
+  opacity: 0.7;
+}
+.forecast-temperatures {
+  font-size: 14px;
+}
+.forecast-min-temp {
+  opacity: 0.7;
 }

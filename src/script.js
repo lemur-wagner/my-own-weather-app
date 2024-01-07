@@ -48,8 +48,17 @@ function updateWeather(response) {
   description.innerHTML = response.data.condition.description;
   city.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+
+  getForecastData(response.data.city);
 }
-function displayForecast() {
+function getForecastData(city) {
+  let apiKey = "fc033e4428deacf92tb6o5f960d83508";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
@@ -61,7 +70,7 @@ function displayForecast() {
             <div class="forecast-weekdays">${day}</div>
             <img
               src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/snow-day.png"
-              width="55"
+              width="65"
             />
             <br />
             <div class="forecast-temperatures">
@@ -75,5 +84,5 @@ function displayForecast() {
   let forecast = document.querySelector("#forecast");
   forecast.innerHTML = forecastHtml;
 }
+
 searchCity("Warsaw");
-displayForecast();

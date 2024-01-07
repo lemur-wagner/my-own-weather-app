@@ -49,3 +49,31 @@ function updateWeather(response) {
   city.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
 }
+function displayForecast() {
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="row">
+          <div class="column-1">
+            <div class="forecast-weekdays">${day}</div>
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/snow-day.png"
+              width="55"
+            />
+            <br />
+            <div class="forecast-temperatures">
+              <span class="forecast-max-temp">18</span>
+              <span class="forecast-min-temp">12</span>
+            </div>
+          </div>
+        </div>`;
+  });
+
+  let forecast = document.querySelector("#forecast");
+  forecast.innerHTML = forecastHtml;
+}
+searchCity("Warsaw");
+displayForecast();

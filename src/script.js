@@ -4,7 +4,6 @@ searchFormElement.addEventListener("submit", displayCity);
 function displayCity(event) {
   event.preventDefault();
   let searchFormInput = document.querySelector("#search-form-input");
-
   searchCity(searchFormInput.value);
 }
 
@@ -34,7 +33,6 @@ function updateWeather(response) {
   ];
   if (minutes < 10) {
     minutes = `0${minutes}`;
-
     return `${day} ${hours}:${minutes}`;
   }
 
